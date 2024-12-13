@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .bg {
+        background-image: url("https://i.pinimg.com/736x/02/d2/49/02d2497f8fa460539e2a99ee13f908c3.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.0);
+        padding: 15px;
+        border-radius: 8px;
+        z-index: 1;
+        width: 100px;
+    }
+
+    .navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar ul li {
+        margin: 15px 0;
+    }
+
+    .navbar ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s;
+        padding: 5px;
+        display: inline-block;
+    }
+
+    .navbar ul li a:hover {
+        color: #ff6347;
+    }
+
+    .navbar ul li a.active {
+        border-bottom: 2px solid #ff6347;
+    }
+
+    .profile-container {
+        max-width: 1000px;
+        margin: 30px auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .profile-header {
+        display: flex;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .profile-header .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 20px;
+        object-fit: cover;
+    }
+
+    .profile-header .profile-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profile-header .profile-info h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .profile-header .profile-info p {
+        margin: 5px 0;
+        color: #888;
+    }
+
+    .stats {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        flex-wrap: wrap;
+    }
+
+    .stats div {
+        text-align: center;
+        flex-basis: 30%;
+        margin: 10px 0;
+    }
+
+    .stats div h3 {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .stats div p {
+        margin: 5px 0;
+        color: #888;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .action-buttons .btn {
+        padding: 10px 60px;
+        border-radius: 5px;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .follow-btn {
+        background-color: #007bff;
+    }
+
+    .follow-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .message-btn {
+        background-color: gray;
+    }
+
+    .message-btn:hover {
+        background-color: gray;
+    }
+
+    .posts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .posts .post {
+        width: 32%;
+        height: 250px;
+        background-color: #ddd;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .posts .post p {
+        font-size: 18px;
+        color: #888;
+    }
+
+    @media (max-width: 768px) {
+        .profile-header {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-header .profile-info {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .stats {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .posts .post {
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .posts .post {
+            width: 100%;
+        }
+
+        .stats div {
+            flex-basis: 100%;
+            margin: 10px 0;
+        }
+    }
+
+    footer {
+        background-color:LightSalmon;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    footer .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    footer .social-links img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+
+    footer .social-links img:hover {
+        transform: scale(1.1);
+    }
+
+</style>
+</head>
+<body>
+
+<div class="bg">
+<nav class="navbar">
+<ul>
+<li><a href="#home" class="nav-link">Home</a></li>
+<li><a href="#about" class="nav-link">About Me</a></li>
+<li><a href="#contact" class="nav-link">Contact</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="home"></h1>
+<div class="profile-container">
+<div class="profile-header">
+<img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/387330873_1019469135977905_1199898182762886688_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=Dz7YDKVkQVgQ7kNvgEk0KdF&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGFbWI2tEdTKXwal2YNQ8FjMjqf4rW4HYJmJye1mAP5lg&oe=678387E1" alt="Profile Image" class="profile-img">
+<div class="profile-info">
+<h2>ia_di8</h2>
+<p id="about">Hi, I’m Atallah | Web Developer | Passionate about Coding</p>
+</div>
+</div>
+<div class="stats">
+<div>
+<h3>1.5 M</h3>
+<p>المتابعين</p>
+</div>
+<div>
+<h3>0</h3>
+<p>المتابعة</p>
+</div>
+<div>
+<h3>0</h3>
+<p>المنشورات</p>
+</div>
+</div>
+<div class="action-buttons">
+<a href="https://www.instagram.com/ia_di8/?hl=ar" class="btn follow-btn" target="_blank">Follow</a>
+<a href="https://www.instagram.com/ia_di8/?hl=ar" class="btn message-btn">Message</a>
+</div>
+<h3 style="text-align:center">No post yet</h3>
+<hr>
+</div>
+
+<footer>
+<div class="social-links">
+<h1 id="contact"></h1>
+<!-- روابط حسابات إنستغرام ويوتيوب وتويتر -->
+<a href="https://www.instagram.com/ia_di8/?hl=ar" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1200px-Instagram_logo_2016.svg.png" alt="Instagram">
+</a>
+<a href="https://www.youtube.com/@Atta-lix" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+</a>
+</div>
+</footer>
+
+<script>
+document.querySelectorAll('.nav-link').forEach(link => {
+link.addEventListener('click', function(e) {
+document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+this.classList.add('active');
+});
+});
+</script>
+</body>
+</html>
